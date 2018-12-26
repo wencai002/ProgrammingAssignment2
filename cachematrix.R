@@ -1,14 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Homework of Cousera_rProgramming Assignment 2
+## inverse of a matrix by using caching and lexical scoping
 
-## Write a short comment describing this function
+## function makeCacheMatrix creates and stores the inverse of the matrix first
 
 makeCacheMatrix <- function(x = matrix()) {
     inv_x <- NULL
+    ## try to filter out the matrix which are not square
     if (nrow(x)!=ncol(x)){
         simpleError(print("matrix given has to be square"))
     }
     else {
+        ## here to start the real business
         set <- function(y) {
             x <<- y
             inv_x <<- NULL
@@ -22,7 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
     }
 }
 
-## Write a short comment describing this function
+## function cacheSolve will check the value availability within the cache
 
 cacheSolve <- function(x, ...) {
     inv_x <- x$getinv()
